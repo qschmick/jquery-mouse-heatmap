@@ -1,0 +1,20 @@
+{
+"name" : "jquery-mouse-heatmap",
+"version" : "0.1",
+"description" : "jQuery plugin to track mouse movements across the screen and then either redraw those movements, generate a heatmap, or save tracking back to server.",
+"main" : [ "./jquery.mousetracker.js"],
+"dependencies" : {
+"jquery" : ">= 1.10.x"
+},
+"keywords" : [
+"heatmap",
+"mouse",
+"tracker"
+],
+"author" : {
+"name" : "Quentin Schmick"
+},
+"license": [
+"http://www.opensource.org/licenses/mit-license.php"
+]
+}
