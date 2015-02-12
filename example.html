@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style type="text/css">
+            .bodyBox{
+                width:100%;
+                min-width:600px;
+                min-height:600px;
+            }
+            .box{
+                width:90px;
+                display:inline-block;
+                border: solid 1px black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bodyBox">
+            <button id="btnHeatMap">Draw Heatmap</button>
+            <button id="btnDrawLiveContent">Draw Live Content</button>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="/jquery.mousetracker.js"></script>
+        <script type="text/javascript" >
+            $(function(){
+                $('.box').mouseTracker();
+                $('#btnHeatMap').click(function(){$('.box').mouseTracker('drawHeatMap');});
+                $('#btnDrawLiveContent').click(function(){$('.box').mouseTracker('drawLiveContent');});
+            });
+        </script>
+    </body>
+</html>
