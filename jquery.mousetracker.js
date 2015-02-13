@@ -55,7 +55,13 @@
         };
         
         base.saveData = function(){
-            console.log("TODO: Implement AJAX save of data on window.unload");
+            if(base.options.url.length > 0 && base.options.saveTrackerData){
+                $.ajax({
+                    type: "POST",
+                    url: base.options.url,
+                    data: { mouseTracker: base }
+                });
+            }
         };
         
         base.drawHeatMap = function(){
@@ -129,12 +135,11 @@
                 if(typeof curNdx === "undefined")
                     curNdx = 0;
                 
-                
                 var img = base.$el.find('.mouseImage')[0];
                 if(typeof img === "undefined"){
                     img = document.createElement("IMG");
                     img.className = "mouseImage";
-                    img.src = ""; //TODO: move to global options
+                    img.src = base.options.cursorUrl; //TODO: move to global options
                     img.style.position = "absolute";
                     base.$el.append(img);
                 }
@@ -182,7 +187,9 @@
     };
     
     $.mouseTracker.defaultOptions = {
-        url: ''
+        url: '',
+        cursorUrl: '',
+        saveTrackerData: true
     };
     
     $.fn.mouseTracker = function(options){
