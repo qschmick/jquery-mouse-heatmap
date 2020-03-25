@@ -94,7 +94,7 @@
                         var count = movementLocations[xID][yID];
                         colorNdx = Math.round((count/base.max)*100);
                         ctx.fillStyle = heatColors[colorNdx].color;
-                        ctx.fillRec(xID,yID,1,1);
+                        ctx.fillRect(xID,yID,1,1);
                     }
                 }
             }
